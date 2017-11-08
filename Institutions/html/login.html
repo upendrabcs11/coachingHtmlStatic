@@ -7,23 +7,23 @@
     <!-- CSRF Token -->
     <title>test</title>
     <!-- Styles -->
-    <link href="/css/static/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/static/bootstrap.min.css" rel="stylesheet">
     <style>
     </style>
     <!-- Scripts -->
-    <script type="text/javascript" src="/js/common/plugin/jquery-3.2.1.min.js" ></script>
+    <script type="text/javascript" src="../js/common/plugin/jquery-3.2.1.min.js" ></script>
 </head>
 <body>
     <div id="app-container">
 	 <header class="header">
 			<div>
-				<h1 class="header-logo"><img class="header-logo-img" src="/img/common/logo.png" /></h1>
+				<h1 class="header-logo"><img class="header-logo-img" src="../image/common/logo.png" /></h1>
 				<ul class="nav navbar-nav">
 					&nbsp;
 				</ul>
 				<ul class="">
-						<li><a href="{{ url('/login') }}">Login</a></li>
-						<li><a href="{{ url('/register') }}">Register</a></li>
+						<li><a href="/login">Login</a></li>
+						<li><a href="/register">Register</a></li>
 						<li class="">
 							<a href="#" class="" role="button" aria-expanded="false">
 								 <span class="caret"> name-of-user </span>
@@ -58,51 +58,41 @@
 					<div class="col-md-4">
 						<div class="signup-form">
 							<div id="institute-registration">
-								<form  role="form" method="POST" action="{{ url('/institute-register') }}">
-										{{ csrf_field() }}
+								<form  role="form" method="POST" action="/institute-register'">
+										
 									<h3>Create your Institute Account</h3>
 									<p>All details are mandatory</p>
-									<div id="InstituteName" class="form-group  {{ $errors->has('instituteName') ? ' has-error' : '' }}">
+									<div id="InstituteName" class="form-group has-error'">
 										<label>Institute Name</label>
-										@if ($errors->has('instituteName'))
-											<span class="help-block"><strong>{{ $errors->first('instituteName') }}</strong></span>
-										@endif
-										<input class="form-control" placeholder="Enter Your Institute/Tution Name" name="instituteName" value="{{ old('instituteName') }}" type="text">
+											<span class="help-block"><strong>erro name</strong></span>										
+										<input class="form-control" placeholder="Enter Your Institute/Tution Name" name="instituteName" value="" type="text">
 									</div>					
-									<div id="State" class="form-group {{ $errors->has('state') ? ' has-error' : '' }}">
+									<div id="State" class="form-group  has-error">
 										<label>State</label>
-										@if($errors->has('state'))
-								  <span class="help-block"><strong>{{ $errors->first('state') }}</strong></span>
-							@endif
-										<input class="form-control" placeholder="Enter State Name" name="state" value="{{ old('state') }}" type="text">
-							<ul id="State-dropdown-list">
-							  <li><span data-value="1">1</span></li>
-							  <li><span data-value="1">1</span></li>
-							  <li><span data-value="1">1</span></li>
-							  <li><span data-value="1">1</span></li>
-							  <li><span data-value="1">1</span></li>
-							</ul>
+								        <span class="help-block"><strong>error</strong></span>
+										<input class="form-control" placeholder="Enter State Name" name="state" value="" type="text">
+											<ul id="State-dropdown-list">
+											  <li><span data-value="1">1</span></li>
+											  <li><span data-value="1">1</span></li>
+											  <li><span data-value="1">1</span></li>
+											  <li><span data-value="1">1</span></li>
+											  <li><span data-value="1">1</span></li>
+											</ul>
 									</div>					
-									<div id="City" class="form-group {{ $errors->has('city') ? ' has-error' : '' }}">
+									<div id="City" class="form-group has-error">
 										<label>City</label>
-										@if($errors->has('city'))
-											<span class="help-block"><strong>{{ $errors->first('city') }}</strong></span>
-										@endif
-										<input class="form-control" placeholder="Enter City Name" name="city" value="{{ old('city') }}" type="text">
+											<span class="help-block"><strong>error  msg</strong></span>
+										<input class="form-control" placeholder="Enter City Name" name="city" value="" type="text">
 									</div>
-									<div id="CityArea" class="form-group {{ $errors->has('cityArea') ? ' has-error' : '' }}">
+									<div id="CityArea" class="form-group has-error">
 										<label>Area Or pincode</label>
-										@if($errors->has('cityArea'))
-											<span class="help-block"><strong>{{ $errors->first('cityArea') }}</strong></span>
-							@endif
-										<input class="form-control" placeholder="Enter Pin No"  name="cityArea" value="{{ old('cityArea') }}"  type="text">
+											<span class="help-block"><strong>error msg</strong></span>							
+										<input class="form-control" placeholder="Enter Pin No"  name="cityArea" value=""  type="text">
 									</div>					
-									<div id="Address" class="form-group {{ $errors->has('address') ? ' has-error' : '' }}">
+									<div id="Address" class="form-group  has-error">
 										<label>Address</label>
-										@if($errors->has('address'))
-											<span class="help-block"><strong>{{ $errors->first('address') }}</strong></span>
-							@endif
-										<textarea class="form-control" placeholder="Enter Address" name="address" value="{{ old('address') }}"></textarea>
+											<span class="help-block"><strong>error msg</strong></span>
+										<textarea class="form-control" placeholder="Enter Address" name="address" value=""></textarea>
 									</div>
 									<!-- <p>If you have read and agree to the Terms and Conditions, please continue</p> -->
 										
@@ -112,41 +102,31 @@
 								<div id="institute-owner" class="hide">
 									<p>&nbsp;</p>			
 									<h3>Ownner Information</h3>
-									<div id="FirstName" class="form-group {{ $errors->has('firstName') ? ' has-error' : '' }}">
+									<div id="FirstName" class="form-group has-error">
 										<label>First Name</label>
-										@if($errors->has('firstName'))
-											<span class="help-block"><strong>{{ $errors->first('firstName') }}</strong></span>
-										@endif
-										<input class="form-control" placeholder="Enter First Name" name="firstName" value="{{ old('firstName') }}" type="text">
+											<span class="help-block"><strong>error msg</strong></span>
+										<input class="form-control" placeholder="Enter First Name" name="firstName" value="" type="text">
 									</div>
-									<div id="LastName" class="form-group {{ $errors->has('lastName') ? ' has-error' : '' }}">
+									<div id="LastName" class="form-group has-error">
 										<label>Last Name</label>
-										@if($errors->has('lastName'))
-											<span class="help-block"><strong>{{ $errors->first('lastName') }}</strong></span>
-										@endif
-										<input class="form-control" placeholder="Enter Last Name" name="lastName" value="{{ old('lastName') }}" type="text">
+											<span class="help-block"><strong>error msg</strong></span>
+										<input class="form-control" placeholder="Enter Last Name" name="lastName" value="" type="text">
 									</div>
-									<div id="Email" class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
+									<div id="Email" class="form-group  has-error">
 										<label>Email ID</label>
-										@if($errors->has('email'))
-											<span class="help-block"><strong>{{ $errors->first('email') }}</strong></span>
-										@endif
-										<input class="form-control" placeholder="Enter Email ID" name="email" value="{{ old('email') }}" type="text">
+											<span class="help-block"><strong>error msg</strong></span>
+										<input class="form-control" placeholder="Enter Email ID" name="email" value="" type="text">
 									</div>
-									<div id="MobileNo" class="form-group {{ $errors->has('mobileNo') ? ' has-error' : '' }}">
+									<div id="MobileNo" class="form-group has-error">
 										<label>Phone No</label>
-										@if($errors->has('mobileNo'))
-											<span class="help-block"><strong>{{ $errors->first('mobileNo') }}</strong></span>
-										@endif
-										<input class="form-control" placeholder="Enter Phone No" name="mobileNo" value="{{ old('mobileNo') }}" type="text">
+											<span class="help-block"><strong></strong></span>
+										<input class="form-control" placeholder="Enter Phone No" name="mobileNo" value="" type="text">
 									</div>
-									<div id="Password" class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
+									<div id="Password" class="form-group has-error">
 										<label>Phone No</label>
-										@if($errors->has('password'))
-											<span class="help-block"><strong>{{ $errors->first('password') }}</strong></span>
-										@endif
+											<span class="help-block"><strong></strong></span>
 										<label>Password</label>
-										<input class="form-control" placeholder="Enter Password" name="password" value="{{ old('password') }}" type="password">
+										<input class="form-control" placeholder="Enter Password" name="password" value="" type="password">
 									</div>
 									<div id="CNFPassword" class="form-group">
 										<label>Confirm Password</label>
