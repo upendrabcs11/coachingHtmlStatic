@@ -1,0 +1,180 @@
+// headers and top section 
+
+ <link href={{ asset("css/common/style.css") }} rel="stylesheet">
+
+<div class="row signUp">
+	<div class="col-md-8">		
+		<h2>Hello</h2>
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+       standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, 
+        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
+        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions 
+        of Lorem Ipsum.
+    </p>
+	</div>
+	<div class="col-md-4">
+		<div class="signup-form">
+			<div id="institute-registration">
+				<form  role="form" method="POST" action="{{ url('/institute-register') }}">
+                        {{ csrf_field() }}
+					<h3>Create your Institute Account</h3>
+					<p>All details are mandatory</p>
+					<div id="InstituteName" class="form-group  {{ $errors->has('instituteName') ? ' has-error' : '' }}">
+						<label>Institute Name</label>
+						@if ($errors->has('instituteName'))
+                            <span class="help-block"><strong>{{ $errors->first('instituteName') }}</strong></span>
+                        @endif
+						<input class="form-control" placeholder="Enter Your Institute/Tution Name" name="instituteName" value="{{ old('instituteName') }}" type="text">
+					</div>					
+					<div id="State" class="form-group {{ $errors->has('state') ? ' has-error' : '' }}">
+						<label>State</label>
+						@if($errors->has('state'))
+                  <span class="help-block"><strong>{{ $errors->first('state') }}</strong></span>
+            @endif
+						<input class="form-control" placeholder="Enter State Name" name="state" value="{{ old('state') }}" type="text">
+            <ul id="State-dropdown-list">
+              <li><span data-value="1">1</span></li>
+              <li><span data-value="1">1</span></li>
+              <li><span data-value="1">1</span></li>
+              <li><span data-value="1">1</span></li>
+              <li><span data-value="1">1</span></li>
+            </ul>
+					</div>					
+					<div id="City" class="form-group {{ $errors->has('city') ? ' has-error' : '' }}">
+						<label>City</label>
+						@if($errors->has('city'))
+                            <span class="help-block"><strong>{{ $errors->first('city') }}</strong></span>
+                        @endif
+						<input class="form-control" placeholder="Enter City Name" name="city" value="{{ old('city') }}" type="text">
+					</div>
+					<div id="CityArea" class="form-group {{ $errors->has('cityArea') ? ' has-error' : '' }}">
+						<label>Area Or pincode</label>
+						@if($errors->has('cityArea'))
+                            <span class="help-block"><strong>{{ $errors->first('cityArea') }}</strong></span>
+            @endif
+						<input class="form-control" placeholder="Enter Pin No"  name="cityArea" value="{{ old('cityArea') }}"  type="text">
+					</div>					
+					<div id="Address" class="form-group {{ $errors->has('address') ? ' has-error' : '' }}">
+						<label>Address</label>
+						@if($errors->has('address'))
+                            <span class="help-block"><strong>{{ $errors->first('address') }}</strong></span>
+            @endif
+						<textarea class="form-control" placeholder="Enter Address" name="address" value="{{ old('address') }}"></textarea>
+					</div>
+					<!-- <p>If you have read and agree to the Terms and Conditions, please continue</p> -->
+						
+					<input class="btn btn-success" type="submit" value="Continue">
+				</div>
+        
+				<div id="institute-owner" class="hide">
+					<p>&nbsp;</p>			
+					<h3>Ownner Information</h3>
+					<div id="FirstName" class="form-group {{ $errors->has('firstName') ? ' has-error' : '' }}">
+						<label>First Name</label>
+						@if($errors->has('firstName'))
+                            <span class="help-block"><strong>{{ $errors->first('firstName') }}</strong></span>
+                        @endif
+						<input class="form-control" placeholder="Enter First Name" name="firstName" value="{{ old('firstName') }}" type="text">
+					</div>
+					<div id="LastName" class="form-group {{ $errors->has('lastName') ? ' has-error' : '' }}">
+						<label>Last Name</label>
+						@if($errors->has('lastName'))
+                            <span class="help-block"><strong>{{ $errors->first('lastName') }}</strong></span>
+                        @endif
+						<input class="form-control" placeholder="Enter Last Name" name="lastName" value="{{ old('lastName') }}" type="text">
+					</div>
+					<div id="Email" class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
+						<label>Email ID</label>
+						@if($errors->has('email'))
+                            <span class="help-block"><strong>{{ $errors->first('email') }}</strong></span>
+                        @endif
+						<input class="form-control" placeholder="Enter Email ID" name="email" value="{{ old('email') }}" type="text">
+					</div>
+					<div id="MobileNo" class="form-group {{ $errors->has('mobileNo') ? ' has-error' : '' }}">
+						<label>Phone No</label>
+						@if($errors->has('mobileNo'))
+                            <span class="help-block"><strong>{{ $errors->first('mobileNo') }}</strong></span>
+                        @endif
+						<input class="form-control" placeholder="Enter Phone No" name="mobileNo" value="{{ old('mobileNo') }}" type="text">
+					</div>
+					<div id="Password" class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
+						<label>Phone No</label>
+						@if($errors->has('password'))
+                            <span class="help-block"><strong>{{ $errors->first('password') }}</strong></span>
+                        @endif
+						<label>Password</label>
+						<input class="form-control" placeholder="Enter Password" name="password" value="{{ old('password') }}" type="password">
+					</div>
+					<div id="CNFPassword" class="form-group">
+						<label>Confirm Password</label>
+						<input class="form-control" placeholder="Enter Confirm Password" type="password">
+					</div>
+					<input class="btn btn-success" type="submit" value="Submit">
+				</div>
+			</form>
+		</div>
+	</div>
+  </div>
+</div>
+  @endsection
+  
+  @section('scripts')
+   <script type="text/javascript">
+   $(document).ready(function(){
+      getAreaOFCity();
+      getStates();
+      getCityByState();
+      
+   });
+   function getAreaOFCity(cityId){
+   	 $.ajax({
+                type: "GET", 		//GET or POST or PUT or DELETE verb
+                      url: '/institutions/public/api/area'+	(cityId ? "/"+cityId : "" ),	// Location of the service
+                data : "", 		//Data sent to server
+                contentType: "",		// content type sent to server
+                dataType: "json", 	//Expected data format from server
+                processdata: true, 	//True or False
+                success: function (responce) {//On Successful service call
+                    console.log(responce);
+                },
+                error: function (responce) {
+                    console.log("error in api call");
+                }	// When Service call fails
+            });
+   }
+   function getStates(){
+   	 $.ajax({
+                type: "GET", 		//GET or POST or PUT or DELETE verb
+                url: '/institutions/public/api/state' 	,	// Location of the service
+                data : "", 		//Data sent to server
+                contentType: "",		// content type sent to server
+                dataType: "json", 	//Expected data format from server
+                processdata: true, 	//True or False
+                success: function (responce) {//On Successful service call
+                    console.log(responce);
+                },
+                error: function (responce) {
+                    console.log("error in api call");
+                }	// When Service call fails
+            });
+   }
+   function getCityByState(stateId){
+   	 $.ajax({
+                type: "GET", 		//GET or POST or PUT or DELETE verb
+                url: '/institutions/public/api/city'+(stateId ? "/"+stateId : "" ),	// Location of the service
+                data : "", 		//Data sent to server
+                contentType: "",		// content type sent to server
+                dataType: "json", 	//Expected data format from server
+                processdata: true, 	//True or False
+                success: function (responce) {//On Successful service call
+                    console.log(responce);
+                },
+                error: function (responce) {
+                    console.log("error in api call");
+                }	// When Service call fails
+            });
+   }
+   		
+   </script>
+  @endsection
