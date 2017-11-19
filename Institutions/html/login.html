@@ -8,200 +8,36 @@
     <title>test</title>
     <!-- Styles -->
     <link href="../css/static/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/common/style.css" rel="stylesheet">
     <style>
     </style>
     <!-- Scripts -->
     <script type="text/javascript" src="../js/common/plugin/jquery-3.2.1.min.js" ></script>
+    <script type="text/javascript" src="../js/common/plugin/bootstrap.min.js" ></script>
 </head>
-<body>
-    <div id="app-container">
-	 <header class="header">
-			<div>
-				<h1 class="header-logo"><img class="header-logo-img" src="../image/common/logo.png" /></h1>
-				<ul class="nav navbar-nav">
-					&nbsp;
-				</ul>
-				<ul class="">
-						<li><a href="/login">Login</a></li>
-						<li><a href="/register">Register</a></li>
-						<li class="">
-							<a href="#" class="" role="button" aria-expanded="false">
-								 <span class="caret"> name-of-user </span>
-							</a>
-							<ul class="" role="menu">
-								<li>
-									<a href="/logout"
-										onclick="event.preventDefault();
-												 document.getElementById('logout-form').submit();">
-										Logout
-									</a>
-								</li>
-							</ul>
-						</li>
-				</ul>
-			</div>
-		</header>
-        <section class="content-container">
-           <div class="container-fluid">
-								  
-				<div class="row signUp">
-					<div class="col-md-8">		
-						<h2>Hello</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-					   standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-						a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, 
-						remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
-						Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions 
-						of Lorem Ipsum.
-					</p>
-					</div>
-					<div class="col-md-4">
-						<div class="signup-form">
-							<div id="institute-registration">
-								<form  role="form" method="POST" action="/institute-register'">
-										
-									<h3>Create your Institute Account</h3>
-									<p>All details are mandatory</p>
-									<div id="InstituteName" class="form-group has-error'">
-										<label>Institute Name</label>
-											<span class="help-block"><strong>erro name</strong></span>										
-										<input class="form-control" placeholder="Enter Your Institute/Tution Name" name="instituteName" value="" type="text">
-									</div>					
-									<div id="State" class="form-group  has-error">
-										<label>State</label>
-								        <span class="help-block"><strong>error</strong></span>
-										<input class="form-control" placeholder="Enter State Name" name="state" value="" type="text">
-											<ul id="State-dropdown-list">
-											  <li><span data-value="1">1</span></li>
-											  <li><span data-value="1">1</span></li>
-											  <li><span data-value="1">1</span></li>
-											  <li><span data-value="1">1</span></li>
-											  <li><span data-value="1">1</span></li>
-											</ul>
-									</div>					
-									<div id="City" class="form-group has-error">
-										<label>City</label>
-											<span class="help-block"><strong>error  msg</strong></span>
-										<input class="form-control" placeholder="Enter City Name" name="city" value="" type="text">
-									</div>
-									<div id="CityArea" class="form-group has-error">
-										<label>Area Or pincode</label>
-											<span class="help-block"><strong>error msg</strong></span>							
-										<input class="form-control" placeholder="Enter Pin No"  name="cityArea" value=""  type="text">
-									</div>					
-									<div id="Address" class="form-group  has-error">
-										<label>Address</label>
-											<span class="help-block"><strong>error msg</strong></span>
-										<textarea class="form-control" placeholder="Enter Address" name="address" value=""></textarea>
-									</div>
-									<!-- <p>If you have read and agree to the Terms and Conditions, please continue</p> -->
-										
-									<input class="btn btn-success" type="submit" value="Continue">
-								</div>
-						
-								<div id="institute-owner" class="hide">
-									<p>&nbsp;</p>			
-									<h3>Ownner Information</h3>
-									<div id="FirstName" class="form-group has-error">
-										<label>First Name</label>
-											<span class="help-block"><strong>error msg</strong></span>
-										<input class="form-control" placeholder="Enter First Name" name="firstName" value="" type="text">
-									</div>
-									<div id="LastName" class="form-group has-error">
-										<label>Last Name</label>
-											<span class="help-block"><strong>error msg</strong></span>
-										<input class="form-control" placeholder="Enter Last Name" name="lastName" value="" type="text">
-									</div>
-									<div id="Email" class="form-group  has-error">
-										<label>Email ID</label>
-											<span class="help-block"><strong>error msg</strong></span>
-										<input class="form-control" placeholder="Enter Email ID" name="email" value="" type="text">
-									</div>
-									<div id="MobileNo" class="form-group has-error">
-										<label>Phone No</label>
-											<span class="help-block"><strong></strong></span>
-										<input class="form-control" placeholder="Enter Phone No" name="mobileNo" value="" type="text">
-									</div>
-									<div id="Password" class="form-group has-error">
-										<label>Phone No</label>
-											<span class="help-block"><strong></strong></span>
-										<label>Password</label>
-										<input class="form-control" placeholder="Enter Password" name="password" value="" type="password">
-									</div>
-									<div id="CNFPassword" class="form-group">
-										<label>Confirm Password</label>
-										<input class="form-control" placeholder="Enter Confirm Password" type="password">
-									</div>
-									<input class="btn btn-success" type="submit" value="Submit">
-								</div>
-							</form>
-						</div>
-					</div>
-				  </div>
-				</div>
-       </section>
-       <footer>
-        
-       </footer>
-    </div>
+<body class="login-page">
+    <div class="login-container">
 	
-   <script> 
-   
-   </script>
-   <script type="text/javascript">
-   $(document).ready(function(){
-      
-      
-   });
-   function getAreaOFCity(cityId){
-   	 $.ajax({
-                type: "GET", 		//GET or POST or PUT or DELETE verb
-                      url: '/institutions/public/api/area'+	(cityId ? "/"+cityId : "" ),	// Location of the service
-                data : "", 		//Data sent to server
-                contentType: "",		// content type sent to server
-                dataType: "json", 	//Expected data format from server
-                processdata: true, 	//True or False
-                success: function (responce) {//On Successful service call
-                    console.log(responce);
-                },
-                error: function (responce) {
-                    console.log("error in api call");
-                }	// When Service call fails
-            });
-   }
-   function getStates(){
-   	 $.ajax({
-                type: "GET", 		//GET or POST or PUT or DELETE verb
-                url: '/institutions/public/api/state' 	,	// Location of the service
-                data : "", 		//Data sent to server
-                contentType: "",		// content type sent to server
-                dataType: "json", 	//Expected data format from server
-                processdata: true, 	//True or False
-                success: function (responce) {//On Successful service call
-                    console.log(responce);
-                },
-                error: function (responce) {
-                    console.log("error in api call");
-                }	// When Service call fails
-            });
-   }
-   function getCityByState(stateId){
-   	 $.ajax({
-                type: "GET", 		//GET or POST or PUT or DELETE verb
-                url: '/institutions/public/api/city'+(stateId ? "/"+stateId : "" ),	// Location of the service
-                data : "", 		//Data sent to server
-                contentType: "",		// content type sent to server
-                dataType: "json", 	//Expected data format from server
-                processdata: true, 	//True or False
-                success: function (responce) {//On Successful service call
-                    console.log(responce);
-                },
-                error: function (responce) {
-                    console.log("error in api call");
-                }	// When Service call fails
-            });
-   }
-   		
-   </script>
+		
+		<div class="login-logo"><img src="../image/common/logo.png" /></div>
+        
+ 
+         <form name='loginForm' action="" method="POST">
+        
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="User Name" name="j_username"/>
+		</div>
+		<div class="form-group">
+			<input type="password" class="form-control" placeholder="Password" name="j_password"/>
+		</div>		
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>			
+		
+		<div class="">
+			<input class="btn btn-block btn-primary" type="submit" value="Login" />
+		</div>
+		</form>
+	</div>
+    
+    
 </body>
 </html>

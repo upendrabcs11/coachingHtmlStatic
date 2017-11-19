@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSRF Token -->
+    <title>test</title>
+    <!-- Styles -->
+    <link href="../css/static/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/common/style.css" rel="stylesheet">
+    <style>
+    </style>
+    <!-- Scripts -->
+    <script type="text/javascript" src="../js/common/plugin/jquery-3.2.1.min.js" ></script>
+    <script type="text/javascript" src="../js/common/plugin/bootstrap.min.js" ></script>
+</head>
+<body>
+    <div id="app-container">
+	 <header class="header">
+		<div class="container-fluid">
+				<span class="header-logo"><img class="header-logo-img" src="../image/common/logo.png" /></span>
+				<ul class="nav navbar-nav dropdown">
+						<li><a href="/login">Login</a></li>
+						<li><a href="/register">Register</a></li>
+						<li class="dropdown-toggle">
+							<span class="dropdown-toggle" type="button" data-toggle="dropdown">User
+							  <span class="caret"></span></span>
+							  <ul class="dropdown-menu">
+								<li><a href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> Logout </a></li>
+							  </ul>
+						</li>
+				</ul>
+		 </div>	
+      </header>
+       
+        <section class="content-container">
+           <div class="container-fluid">
+								  
+				<div class="row signUp">
+					<div class="col-md-8">		
+						<h2>Hello</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+					   standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+						a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, 
+						remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
+						Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions 
+						of Lorem Ipsum.
+					</p>
+					
+					<button class="btn btn-primary" data-toggle="modal" data-target="#state">State</button>
+					<button class="btn btn-primary" data-toggle="modal" data-target="#city">City</button>
+					
+					
+					</div>
+					<div class="col-md-4">
+						<div class="signup-form">
+							<div id="institute-registration">
+								<form  role="form" method="POST" action="/institute-register'">
+										
+									<h3>Create your Institute Account</h3>
+									<p>All details are mandatory</p>
+									<div id="InstituteName" class="form-group has-error'">
+										<label>Institute Name</label>
+										<input class="form-control" placeholder="Enter Your Institute/Tution Name" name="instituteName" value="" type="text">
+										<span class="help-block">error msg</span>
+									</div>					
+									<div id="State" class="form-group  has-error">
+										<label>State</label>
+										<div class="state-dropdown">
+											<input id="state-dropdown" class="form-control" placeholder="Enter State Name" name="state" value="" type="text">
+										
+											<ul id="state-dropdown-list">
+											  <li><span data-value="1">state-1</span></li>
+											  <li><span data-value="1">1</span></li>
+											  <li><span data-value="1">1</span></li>
+											  <li><span data-value="1">1</span></li>
+											  <li><span data-value="1">1</span></li>
+											</ul>
+										</div>
+										<span class="help-block">error msg</span>
+									</div>					
+									<div id="City" class="form-group has-error">
+										<label>City</label>
+										<div class="city-dropdown">
+											<input id="city-dropdown" class="form-control" placeholder="Enter City Name" name="city" value="" type="text" >
+											<ul id="city-dropdown-list">
+											  <li><span data-value="1">city-1</span></li>
+											  <li><span data-value="1">1</span></li>
+											  <li><span data-value="1">1</span></li>
+											  <li><span data-value="1">1</span></li>
+											  <li><span data-value="1">1</span></li>
+											</ul>
+										</div>
+										<span class="help-block">error msg</span>
+									</div>
+									<div id="CityArea" class="form-group has-error">
+										<label>Area Or pincode</label>		
+										<input class="form-control" placeholder="Enter Pin No"  name="cityArea" value=""  type="text">
+										<span class="help-block">error msg</span>
+									</div>					
+									<div id="Address" class="form-group  has-error">
+										<label>Address</label>
+										<textarea class="form-control" placeholder="Enter Address" name="address" value=""></textarea>
+										<span class="help-block">error msg</span>
+									</div>
+									<!-- <p>If you have read and agree to the Terms and Conditions, please continue</p> -->
+										
+									<button class="btn btn-success">Continue</button>
+								</div>
+						
+								<div id="institute-owner" class="hide">
+									<p>&nbsp;</p>			
+									<h3>Ownner Information</h3>
+									<div id="FirstName" class="form-group has-error">
+										<label>First Name</label>
+											<span class="help-block"><strong>error msg</strong></span>
+										<input class="form-control" placeholder="Enter First Name" name="firstName" value="" type="text">
+									</div>
+									<div id="LastName" class="form-group has-error">
+										<label>Last Name</label>
+											<span class="help-block"><strong>error msg</strong></span>
+										<input class="form-control" placeholder="Enter Last Name" name="lastName" value="" type="text">
+									</div>
+									<div id="Email" class="form-group  has-error">
+										<label>Email ID</label>
+											<span class="help-block"><strong>error msg</strong></span>
+										<input class="form-control" placeholder="Enter Email ID" name="email" value="" type="text">
+									</div>
+									<div id="MobileNo" class="form-group has-error">
+										<label>Phone No</label>
+											<span class="help-block"><strong></strong></span>
+										<input class="form-control" placeholder="Enter Phone No" name="mobileNo" value="" type="text">
+									</div>
+									<div id="Password" class="form-group has-error">
+										<label>Phone No</label>
+											<span class="help-block"><strong></strong></span>
+										<label>Password</label>
+										<input class="form-control" placeholder="Enter Password" name="password" value="" type="password">
+									</div>
+									<div id="CNFPassword" class="form-group">
+										<label>Confirm Password</label>
+										<input class="form-control" placeholder="Enter Confirm Password" type="password">
+									</div>
+									<input class="btn btn-success" type="submit" value="Submit">
+								</div>
+							</form>
+						</div>
+					</div>
+				  </div>
+				</div>
+       </section>
+    
+       
+    <!-- State Modal -->
+	<div id="state" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">State</h4>
+		  </div>
+		  <div class="modal-body">
+			<div id="FirstName" class="form-group has-error">
+				<label>First Name</label>
+				<input class="form-control" placeholder="Enter First Name" name="firstName" value="" type="text">
+				<span class="help-block">Error msg</span>
+			</div>
+			<div id="FirstName" class="form-group has-error">
+				<label>First Name</label>
+				<input class="form-control" placeholder="Enter First Name" name="firstName" value="" type="text">
+				<span class="help-block">Error msg</span>
+			</div>
+			<div id="FirstName" class="form-group has-error">
+				<label>First Name</label>
+				<input class="form-control" placeholder="Enter First Name" name="firstName" value="" type="text">
+				<span class="help-block">Error msg</span>
+			</div>
+			<div class="text-right">
+		  	   <button class="btn btn-primary">Submit</button>
+		    </div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+                
+    <!-- City Modal -->
+	<div id="city" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">City</h4>
+		  </div>
+		  <div class="modal-body">
+			<div id="FirstName" class="form-group has-error">
+				<label>First Name</label>
+				<input class="form-control" placeholder="Enter First Name" name="firstName" value="" type="text">
+				<span class="help-block">Error msg</span>
+			</div>
+			<div id="FirstName" class="form-group has-error">
+				<label>First Name</label>
+				<input class="form-control" placeholder="Enter First Name" name="firstName" value="" type="text">
+				<span class="help-block">Error msg</span>
+			</div>
+			<div id="FirstName" class="form-group has-error">
+				<label>First Name</label>
+				<input class="form-control" placeholder="Enter First Name" name="firstName" value="" type="text">
+				<span class="help-block">Error msg</span>
+			</div>
+			<div class="text-right">
+		  	   <button class="btn btn-primary">Submit</button>
+		    </div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+       
+       
+       
+       
+       <footer>
+        
+       </footer>
+    </div>
+	
+   <script> 
+   
+   </script>
+   <script type="text/javascript">
+   $(document).ready(function(){
+	   
+	   $('#state-dropdown').on('focus', function() {
+	   	  $('#state-dropdown-list').show();
+	   });
+	   $('#state-dropdown').on('blur', function() {
+	   	  $('#state-dropdown-list').hide();
+	   });
+	   $('#city-dropdown').on('focus', function() {
+	   	  $('#city-dropdown-list').show();
+	   });
+       $('#city-dropdown').on('blur', function() {
+	   	  $('#city-dropdown-list').hide();
+	   });
+   });
+   function getAreaOFCity(cityId){
+   	 $.ajax({
+                type: "GET", 		//GET or POST or PUT or DELETE verb
+                      url: '/institutions/public/api/area'+	(cityId ? "/"+cityId : "" ),	// Location of the service
+                data : "", 		//Data sent to server
+                contentType: "",		// content type sent to server
+                dataType: "json", 	//Expected data format from server
+                processdata: true, 	//True or False
+                success: function (responce) {//On Successful service call
+                    console.log(responce);
+                },
+                error: function (responce) {
+                    console.log("error in api call");
+                }	// When Service call fails
+            });
+   }
+   function getStates(){
+   	 $.ajax({
+                type: "GET", 		//GET or POST or PUT or DELETE verb
+                url: '/institutions/public/api/state' 	,	// Location of the service
+                data : "", 		//Data sent to server
+                contentType: "",		// content type sent to server
+                dataType: "json", 	//Expected data format from server
+                processdata: true, 	//True or False
+                success: function (responce) {//On Successful service call
+                    console.log(responce);
+                },
+                error: function (responce) {
+                    console.log("error in api call");
+                }	// When Service call fails
+            });
+   }
+   function getCityByState(stateId){
+   	 $.ajax({
+                type: "GET", 		//GET or POST or PUT or DELETE verb
+                url: '/institutions/public/api/city'+(stateId ? "/"+stateId : "" ),	// Location of the service
+                data : "", 		//Data sent to server
+                contentType: "",		// content type sent to server
+                dataType: "json", 	//Expected data format from server
+                processdata: true, 	//True or False
+                success: function (responce) {//On Successful service call
+                    console.log(responce);
+                },
+                error: function (responce) {
+                    console.log("error in api call");
+                }	// When Service call fails
+            });
+   }
+   		
+   </script>
+</body>
+</html>
